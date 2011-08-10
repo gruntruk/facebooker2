@@ -18,7 +18,7 @@ module Facebooker2
         #
         def fb_login_and_redirect(url, options = {})
           js = update_page do |page|
-            page.redirect_to url
+            "window.location.href = #{url.to_json}"
           end
 
           text = options.delete(:text)
