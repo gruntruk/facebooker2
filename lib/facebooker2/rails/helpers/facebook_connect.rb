@@ -17,9 +17,7 @@ module Facebooker2
         #   => <fb:login-button onlogin="window.location.href = &quot;/other_page&quot;;" v="2">Login with Facebook</fb:login-button>
         #
         def fb_login_and_redirect(url, options = {})
-          js = update_page do |page|
-            "window.location.href = #{url.to_json}"
-          end
+          js = "window.location.href = #{url.to_json};"
 
           text = options.delete(:text)
           
